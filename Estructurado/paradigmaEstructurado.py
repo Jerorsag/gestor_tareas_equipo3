@@ -7,6 +7,7 @@ def mostrar_tareas():
     for i, t in enumerate(tareas, 1):
         print(f"{i}. {t}")
 
+    """Función para ACTUALIZAR tarea - Implementada por Carlos"""
 def actualizar_tarea(indice, nueva_tarea):
     if 0 <= indice < len(tareas):
         tarea_anterior = tareas[indice]
