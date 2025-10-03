@@ -11,10 +11,16 @@ def mostrar_tareas(tareas):
 def eliminar_tarea(tareas, indice):
     return list(filter(lambda x: x[0] != indice, enumerate(tareas)))
 
+def actualizar_tarea(tareas, indice, nueva_tarea):
+    return list(map(lambda x: nueva_tarea if x[0] == indice else x[1], enumerate(tareas)))
+
 # Uso:
 tareas = []
 tareas = agregar_tarea(tareas, "Meditar")
 tareas = agregar_tarea(tareas, "Hacer mercado")
 mostrar_tareas(tareas)
 tareas = [t for _, t in eliminar_tarea(tareas, 0)]
+mostrar_tareas(tareas)
+
+tareas = actualizar_tarea(tareas, 0, "Hacer ejercicio")
 mostrar_tareas(tareas)
